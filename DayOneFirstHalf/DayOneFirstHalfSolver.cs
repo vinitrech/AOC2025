@@ -1,10 +1,9 @@
-﻿namespace DayOneFirstHalf;
+namespace DayOneFirstHalf;
 
-public class Program
+public static class DayOneFirstHalfSolver
 {
-    public static async Task Main()
+    public static async Task<int> SolveSecretEntrance(string[] lines)
     {
-        var lines = await File.ReadAllLinesAsync("Input.txt");
         var dialPosition = 50;
         var zeroHits = 0;
 
@@ -28,5 +27,7 @@ public class Program
         }
 
         Console.WriteLine($"The password to open the lock is: {zeroHits}");
+
+        return zeroHits;
     }
 }
