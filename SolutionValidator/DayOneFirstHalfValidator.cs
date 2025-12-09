@@ -9,7 +9,7 @@ public class DayOneFirstHalfValidator
     public static async Task On_Sucess_Should_Validate_DayOnefirstHalfSolver()
     {
         //arrange
-        var lines = await File.ReadAllLinesAsync("Inputs/Input.txt");
+        var lines = await File.ReadAllLinesAsync("Inputs/DayOneFirstHalf/Input.txt");
 
         //act
         var solution = await DayOneFirstHalfSolver.SolveSecretEntrance(lines);
