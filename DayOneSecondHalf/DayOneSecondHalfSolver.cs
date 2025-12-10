@@ -18,12 +18,33 @@ public static class DayOneSecondHalfSolver
 
             if (direction == 'R')
             {
-                zeroHits += (dialPosition + count) / 100;
-                dialPosition = (dialPosition + count) % 100;
+                while (count > 0)
+                {
+                    dialPosition += 1;
+
+                    if (dialPosition == 100)
+                    {
+                        dialPosition = 0;
+                        zeroHits += 1;
+                    }
+
+                    count--;
+                }
             }
             else
             {
+                while (count > 0)
+                {
+                    dialPosition -= 1;
 
+                    if (dialPosition == 0)
+                        zeroHits++;
+
+                    if (dialPosition < 0)
+                        dialPosition = 99;
+
+                    count--;
+                }
             }
 
             Console.WriteLine($"The dialPosition became {dialPosition}");
