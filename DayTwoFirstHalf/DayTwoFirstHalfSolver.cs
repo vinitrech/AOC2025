@@ -14,6 +14,7 @@ public class DayTwoFirstHalfSolver
         return [.. ids.Where(IsInvalidId)];
     }
 
+    //TODO: Implement invalidation logic
     private static bool IsInvalidId(long id)
     {
         var uniqueString = string.Empty;
