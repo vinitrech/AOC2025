@@ -12,9 +12,9 @@ public static class DayOneSecondHalfSolver
             var direction = line[0];
             var count = Convert.ToInt32(line[1..]);
 
-            Console.WriteLine($"\n\nGot direction {direction} and count {count}");
-            Console.WriteLine($"The dialPosition was {dialPosition}");
-            Console.WriteLine($"The zeroHits was {zeroHits}");
+            // Console.WriteLine($"\n\nGot direction {direction} and count {count}");
+            // Console.WriteLine($"The dialPosition was {dialPosition}");
+            // Console.WriteLine($"The zeroHits was {zeroHits}");
 
             if (direction == 'R')
             {
@@ -47,11 +47,11 @@ public static class DayOneSecondHalfSolver
                 }
             }
 
-            Console.WriteLine($"The dialPosition became {dialPosition}");
-            Console.WriteLine($"The zeroHits became {zeroHits}");
+            // Console.WriteLine($"The dialPosition became {dialPosition}");
+            // Console.WriteLine($"The zeroHits became {zeroHits}");
         }
 
-        Console.WriteLine($"The password to open the lock is: {zeroHits}");
+        // Console.WriteLine($"The password to open the lock is: {zeroHits}");
 
         return zeroHits;
     }

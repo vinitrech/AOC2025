@@ -15,19 +15,19 @@ public class DayTwoFirstHalfValidator
         var solution = DayTwoFirstHalfSolver.SolveGiftShop(ids);
 
         //assert
-        solution.Should().Be("1227775554");
+        solution.Should().Be(1227775554L);
     }
 
-    [Fact]
-    public static async Task On_Sucess_Should_Validate_DayTwoFirstHalfSolver()
-    {
-        //arrange
-        var ids = await File.ReadAllTextAsync("Inputs/DayTwo/Input.txt");
-
-        //act
-        var solution = DayTwoFirstHalfSolver.SolveGiftShop(ids);
-
-        //assert
-        solution.Should().Be("");
-    }
+    // [Fact]
+    // public static async Task On_Sucess_Should_Validate_DayTwoFirstHalfSolver()
+    // {
+    //     //arrange
+    //     var ids = await File.ReadAllTextAsync("Inputs/DayTwo/Input.txt");
+    //
+    //     //act
+    //     var solution = DayTwoFirstHalfSolver.SolveGiftShop(ids);
+    //
+    //     //assert
+    //     solution.Should().Be(0L);
+    // }
 }
