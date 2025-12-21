@@ -17,11 +17,10 @@ public class DayTwoFirstHalfSolver
     private static bool IsInvalidId(long id)
     {
         var stringId = id.ToString();
-        var halfLength = stringId.Length / 2;
 
-        if (stringId.Length % 2 != 0)
+        if (stringId.Length < 2)
             return false;
 
-        return stringId[0..halfLength] == stringId[halfLength..];
+        return string.Concat(stringId, stringId).Substring(1, stringId.Length * 2 - 2).Contains(stringId);
     }
 }

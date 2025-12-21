@@ -15,7 +15,7 @@ public class DayTwoFirstHalfValidator
         var solution = DayTwoFirstHalfSolver.SolveGiftShop(ids);
 
         //assert
-        solution.Should().Be(1227775554L);
+        solution.Should().Be(4174379265L);
     }
 
     [Fact]
@@ -28,6 +28,6 @@ public class DayTwoFirstHalfValidator
         var solution = DayTwoFirstHalfSolver.SolveGiftShop(ids);
 
         //assert
-        solution.Should().Be(18893502033L);
+        solution.Should().Be(26202168557L);
     }
 }
