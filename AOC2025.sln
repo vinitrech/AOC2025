@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionValidator", "Soluti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOneSecondHalf", "DayOneSecondHalf\DayOneSecondHalf.csproj", "{3AEA9695-4551-44E9-9DDD-D5594004EF02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTwoFirstHalf", "DayTwoFirstHalf\DayTwoFirstHalf.csproj", "{C008931B-C059-413F-8F8B-E4333D6B9C3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTwo", "DayTwo\DayTwo.csproj", "{C008931B-C059-413F-8F8B-E4333D6B9C3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayThreeFirstHalf", "DayThreeFirstHalf\DayThreeFirstHalf.csproj", "{31432A0E-07DE-4235-ABE1-240D9AD66BF8}"
 EndProject

@@ -28,6 +28,6 @@ public class DayThreeFirstHalfValidator
         var largestJoltage = DayThreeFirstHalfSolver.SolveLobby(banks);
 
         //assert
-        largestJoltage.Should().Be(0);
+        largestJoltage.Should().Be(17324);
     }
 }

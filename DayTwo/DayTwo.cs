@@ -1,6 +1,6 @@
-﻿namespace DayTwoFirstHalf;
+namespace DayTwo;
 
-public class DayTwoFirstHalfSolver
+public class DayTwoSolver
 {
     public static long SolveGiftShop(string ids) => ids.Split(',').Sum(SumInvalidIds);
 
