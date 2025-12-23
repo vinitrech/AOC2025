@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace DayThreeFirstHalf;
+﻿namespace DayThreeFirstHalf;
 
 public class DayThreeFirstHalfSolver
 {
