@@ -18,31 +18,20 @@ public class DayFourFirstHalfSolver
     {
         var neighbours = 0;
 
-        if (row > 0)
-        {
-            if (rolls[row - 1][column] == '@')
-                neighbours++;
-            if (column > 0 && rolls[row - 1][column - 1] == '@')
-                neighbours++;
-            if (column < rolls[row].Length - 1 && rolls[row - 1][column + 1] == '@')
-                neighbours++;
-        }
+        for (var directionRow = -1; directionRow <= 1; directionRow++)
+            for (var directionColumn = -1; directionColumn <= 1; directionColumn++)
+            {
+                if (directionRow == 0 && directionColumn == 0)
+                    continue;
 
-        if (column > 0 && rolls[row][column - 1] == '@')
-            neighbours++;
-        if (column < rolls[row].Length - 1 && rolls[row][column + 1] == '@')
-            neighbours++;
+                var rowToAnalyze = row + directionRow;
+                var columnToAnalyze = column + directionColumn;
 
-        if (row < rolls.Length - 1)
-        {
-            if (rolls[row + 1][column] == '@')
-                neighbours++;
-            if (column > 0 && rolls[row + 1][column - 1] == '@')
-                neighbours++;
-            if (column < rolls[row].Length - 1 && rolls[row + 1][column + 1] == '@')
-                neighbours++;
-        }
+                if (rowToAnalyze >= 0 && rowToAnalyze < rolls.Length && columnToAnalyze >= 0 && columnToAnalyze < rolls[rowToAnalyze].Length && rolls[rowToAnalyze][columnToAnalyze] == '@')
+                    if (++neighbours > 3)
+                        return false;
+            }
 
-        return neighbours <= 3;
+        return true;
     }
 }
