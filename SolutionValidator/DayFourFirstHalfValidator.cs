@@ -12,10 +12,10 @@ public class DayFourFirstHalfValidator
         var rolls = new string[] { "..@@.@@@@.", "@@@.@.@.@@", "@@@@@.@.@@", "@.@@@@..@.", "@@.@@@@.@@", ".@@@@@@@.@", ".@.@.@.@@@", "@.@@@.@@@@", ".@@@@@@@@.", "@.@.@@@.@." };
 
         //act 
-        var largestJoltage = DayFourFirstHalfSolver.SolvePrintingDepartment(rolls);
+        var rollsNumber = DayFourFirstHalfSolver.SolvePrintingDepartment(rolls);
 
         //assert
-        largestJoltage.Should().Be(357);
+        rollsNumber.Should().Be(13);
     }
 
     [Fact]
@@ -25,9 +25,9 @@ public class DayFourFirstHalfValidator
         var rolls = await File.ReadAllLinesAsync("Inputs/DayFour/Input.txt");
 
         //act
-        var largestJoltage = DayFourFirstHalfSolver.SolvePrintingDepartment(rolls);
+        var rollsNumber = DayFourFirstHalfSolver.SolvePrintingDepartment(rolls);
 
         //assert
-        largestJoltage.Should().Be(17324);
+        rollsNumber.Should().Be(1320L);
     }
 }
