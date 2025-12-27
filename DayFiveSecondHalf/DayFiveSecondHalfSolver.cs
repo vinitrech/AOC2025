@@ -2,7 +2,6 @@
 
 public static class DayFiveSecondHalfSolver
 {
-
     public static int SolveCafeteria(string[] input)
     {
         var separator = input.IndexOf(string.Empty);
