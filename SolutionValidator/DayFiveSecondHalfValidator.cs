@@ -11,11 +11,11 @@ public class DayFiveSecondHalfValidator
         //arrange
         var input = new string[] { "3-5", "10-14", "16-20", "12-18", "", "1", "5", "8", "11", "17", "32" };
 
-        //act 
+        //act
         var result = DayFiveSecondHalfSolver.SolveCafeteria(input);
 
         //assert
-        result.Should().Be(3);
+        result.Should().Be(14L);
     }
 
     [Fact]
@@ -28,6 +28,6 @@ public class DayFiveSecondHalfValidator
         var result = DayFiveSecondHalfSolver.SolveCafeteria(input);
 
         //assert
-        result.Should().Be(707);
+        result.Should().Be(361615643045059L);
     }
 }

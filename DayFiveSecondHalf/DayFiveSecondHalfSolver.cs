@@ -2,13 +2,27 @@
 
 public static class DayFiveSecondHalfSolver
 {
-    public static int SolveCafeteria(string[] input)
+    public static long SolveCafeteria(string[] input)
     {
         var separator = input.IndexOf(string.Empty);
-        var ranges = input[..separator].Select(SetupRangeBoundaries).ToList();
-        var availableIngredients = input[(separator + 1)..].Select(long.Parse);
+        var ranges = input[..separator].Select(SetupRangeBoundaries).OrderBy(range => range.LeftBoundary).ToList();
+        var total = 0L;
+        var currentStart = ranges[0].LeftBoundary;
+        var currentEnd = ranges[0].RightBoundary;
 
-        return availableIngredients.Count(availableIngredient => ranges.Any(range => range.LeftBoundary <= availableIngredient && range.RightBoundary >= availableIngredient));
+        foreach (var (left, right) in ranges.Skip(1))
+        {
+            if (left <= currentEnd)
+                currentEnd = Math.Max(currentEnd, right);
+            else
+            {
+                total += currentEnd - currentStart + 1;
+                currentStart = left;
+                currentEnd = right;
+            }
+        }
+
+        return total + currentEnd - currentStart + 1;
     }
 
     private static (long LeftBoundary, long RightBoundary) SetupRangeBoundaries(this string range)
