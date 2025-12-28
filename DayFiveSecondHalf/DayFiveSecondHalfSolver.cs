@@ -16,7 +16,7 @@ public static class DayFiveSecondHalfSolver
                 currentEnd = Math.Max(currentEnd, right);
             else
             {
-                total += currentEnd - currentStart + 1;
+                total += currentEnd - currentStart + 1;//NOTE: the +1 ensures the including nature of the boundaries is respected
                 currentStart = left;
                 currentEnd = right;
             }
