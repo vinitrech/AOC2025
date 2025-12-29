@@ -9,19 +9,17 @@ public static class DaySixFirstHalfSolver
         var operators = ParseInputOperators(input);
         var index = 0;
 
-        while (index < numbersList[0].Count)
+        while (index < operators.Length)
         {
             var innerNumbers = new List<long>();
             var operation = operators[index];
 
             foreach (var numberList in numbersList)
             {
-                var number = numberList.ElementAtOrDefault(index);
-
-                if (number == 0L)
+                if (index >= numberList.Count)
                     continue;
 
-                innerNumbers.Add(number);
+                innerNumbers.Add(numberList[index]);
             }
 
             if (operation == "*")
@@ -35,6 +33,6 @@ public static class DaySixFirstHalfSolver
         return grandTotal;
     }
 
-    private static List<List<long>> ParseInputNumbersList(string[] input) => [.. input[..^1].OrderByDescending(entry => entry.Length).Select(entry => entry.Split(" ", options: StringSplitOptions.RemoveEmptyEntries).Select(entry => long.Parse(entry)).ToList())];
+    private static List<List<long>> ParseInputNumbersList(string[] input) => [.. input[..^1].Select(entry => entry.Split(" ", options: StringSplitOptions.RemoveEmptyEntries).Select(entry => long.Parse(entry)).ToList())];
     private static string[] ParseInputOperators(string[] input) => input[^1].Split(" ", options: StringSplitOptions.RemoveEmptyEntries);
 }
