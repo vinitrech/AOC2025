@@ -24,7 +24,11 @@ public static class DaySixFirstHalfSolver
                 innerNumbers.Add(number);
             }
 
-            grandTotal += innerNumbers.Aggregate((prev, next) => operation == "*" ? prev * next : prev + next);
+            if (operation == "*")
+                grandTotal += innerNumbers.Aggregate((prev, next) => prev * next);
+            else
+                grandTotal += innerNumbers.Aggregate((prev, next) => prev + next);
+
             index++;
         }
 
