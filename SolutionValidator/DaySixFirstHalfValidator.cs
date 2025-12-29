@@ -15,7 +15,7 @@ public class DaySixFirstHalfValidator
         var result = DaySixFirstHalfSolver.SolveTrashCompactor(input);
 
         //assert
-        result.Should().Be(3);
+        result.Should().Be(4277556L);
     }
 
     [Fact]
@@ -28,6 +28,6 @@ public class DaySixFirstHalfValidator
         var result = DaySixFirstHalfSolver.SolveTrashCompactor(input);
 
         //assert
-        result.Should().Be(707);
+        result.Should().Be(5335495999141L);
     }
 }

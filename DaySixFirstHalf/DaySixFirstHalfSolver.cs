@@ -5,24 +5,32 @@ public static class DaySixFirstHalfSolver
     public static long SolveTrashCompactor(string[] input)
     {
         var grandTotal = 0L;
-        var entries = input.SelectMany(i => i.Split(string.Empty, options: StringSplitOptions.RemoveEmptyEntries)).ToList();
-        var (numbers, operators) = (entries[..^1].OrderByDescending(entry => entry.Length).ToList(), entries[^1]);
+        var numbersList = ParseInputNumbersList(input);
+        var operators = ParseInputOperators(input);
         var index = 0;
 
-        Console.WriteLine($"Numbers:");
-
-        foreach (var number in numbers)
+        while (index < numbersList[0].Count)
         {
-            Console.WriteLine(number);
+            var innerNumbers = new List<long>();
+            var operation = operators[index];
+
+            foreach (var numberList in numbersList)
+            {
+                var number = numberList.ElementAtOrDefault(index);
+
+                if (number == 0L)
+                    continue;
+
+                innerNumbers.Add(number);
+            }
+
+            grandTotal += innerNumbers.Aggregate((prev, next) => operation == "*" ? prev * next : prev + next);
+            index++;
         }
-
-        Console.WriteLine($"Operators: {operators}");
-
-        // while(index < entries[0].Length)
-        // {
-        //     //TODO
-        // }
 
         return grandTotal;
     }
+
+    private static List<List<long>> ParseInputNumbersList(string[] input) => [.. input[..^1].OrderByDescending(entry => entry.Length).Select(entry => entry.Split(" ", options: StringSplitOptions.RemoveEmptyEntries).Select(entry => long.Parse(entry)).ToList())];
+    private static string[] ParseInputOperators(string[] input) => input[^1].Split(" ", options: StringSplitOptions.RemoveEmptyEntries);
 }
